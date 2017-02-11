@@ -11,6 +11,11 @@ import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.DecelerateInterpolator;
+
+import com.melnykov.fab.FloatingActionButton;
 
 import java.io.IOException;
 import java.util.List;
@@ -22,6 +27,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 import static com.example.zappos.ilovezappos.Interface.key;
+import static com.example.zappos.ilovezappos.R.id.fab;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         handleIntent(getIntent());
-//        initViews();
     }
 
     @Override
@@ -60,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
             System.out.println(query);
-            initViews(query);
+            getViews(query);
         }
     }
     @Override
@@ -68,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         handleIntent(intent);
     }
 
-    private void initViews(String query) {
+    private void getViews(String query) {
         recyclerView = (RecyclerView) findViewById(R.id.card_recycler_view);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
