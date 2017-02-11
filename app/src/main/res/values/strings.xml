@@ -2,4 +2,10 @@
     <string name="app_name">ILoveZappos</string>
     <string name="ILoveZappos">ILoveZappos</string>
     <string name="searchitem">Search item</string>
+    <string name="app_label">ILoveZappos</string>
+    <string name="search_hint">Search Product</string>
+    <string name="search_button">Search</string>
+    <string name="action_settings">Action settings</string>
+    <string name="menu_search">Menu search</string>
+    <string name="search_result">search result</string>
 </resources>
